@@ -12,7 +12,7 @@ Dark green: #28b485
   box-sizing: border-box; }
 
 html {
-  font-size: 52.5%; }
+  font-size: 62.5%; }
 
 body {
   font-family: 'Lato', sans-serif;
@@ -42,7 +42,7 @@ body {
     transform: translateX(0); } }
 
 .heading-primary {
-  color: #fff;
+  color: white;
   text-transform: uppercase;
   margin-bottom: 6rem; }
   .heading-primary--main {
@@ -85,6 +85,14 @@ body {
   .paragragh:not(:last-child) {
     margin-bottom: 3rem; }
 
+.heading-four {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  transition: all .4s; }
+
 .u-center-text {
   text-align: center; }
 
@@ -101,6 +109,10 @@ body {
   background-color: #f7f7f7;
   padding: 25rem 0;
   margin-top: -20vh; }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg); }
 
 .header {
   height: 95vh;
@@ -121,55 +133,32 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
-    
-    .row {
-      max-width: 114rem;
-      margin: 0 auto;
-  }
-  
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
   .row:not(:last-child) {
-      margin-bottom: 8rem;
-  }
-  
+    margin-bottom: 8rem; }
   .row::after {
-      content: "";
-      display: table;
-      clear: both;
-  }
-  
+    content: "";
+    display: table;
+    clear: both; }
   .row [class^="col-"] {
-      float: left;
-  }
-  
-  .row [class^="col-"]:not(:last-child) {
-      margin-right: 6rem;
-  }
-  
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
   .row .col-1-of-2 {
-      width: calc((100% - 6rem) / 2);
-  }
-  
+    width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
-      width: calc((100% - 2 * 6rem) / 3);
-  }
-  
+    width: calc((100% - 2 * 6rem) / 3); }
   .row .col-2-of-3 {
-      width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem);
-  }
-  
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
   .row .col-1-of-4 {
-      width: calc((100% - 3 * 6rem) / 4);
-  }
-  
+    width: calc((100% - 3 * 6rem) / 4); }
   .row .col-2-of-4 {
-      width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
-  }
-  
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
   .row .col-3-of-4 {
-      width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
-  }
-  
-  
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -184,11 +173,11 @@ body {
 
 .btn:hover {
   transform: translateY(-0.3rem);
-  box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.3); }
+  box-shadow: 0rem 1rem 2rem rgba(44, 44, 46, 0.3); }
 
 .btn:active {
   transform: translateX(-0.1rem);
-  box-shadow: 0rem 0.8rem 1.6rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0rem 0.8rem 1.6rem rgba(44, 44, 46, 0.2); }
 
 .btn-white {
   background-color: white;
@@ -203,17 +192,57 @@ body {
 
 .btn-text:hover {
   background-color: #55c57a;
-  color: #fff;
-  box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.15);
+  color: white;
+  box-shadow: 0 0.5rem 1.2rem rgba(44, 44, 46, 0.15);
   transform: translateY(-3px); }
 
 .btn-text:active {
   transform: translateY(0); }
 
-.row .composition {
+.composition {
   position: relative; }
   .composition__photo {
     width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(44, 44, 46, 0.4);
     border-radius: 2px;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
-    position: absolute; }
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #55c57a;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(44, 44, 46, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 3rem;
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 1.6rem 4rem rgba(44, 44, 46, 0.3);
+  transition: transform 0.4s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+  .feature-box__text {
+    line-height: 170%; }
